@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Simon Le Bon",
+        "entryBooked": true
+    },
+    {
+        "id": "2",
+        "name": "James Testcase",
+        "entryBooked": false
+    },
+    {
+        "id": "3",
+        "name": "Mark Testcase",
+        "entryBooked": false
+    },
+    {
+        "id": "4",
+        "name": "Sally Testcase",
+        "entryBooked": false
+    }
+]
