@@ -25,7 +25,7 @@ app.get('/applicants', async (req, res) => {
 });
 
 app.get('/applicants/:id', async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.params;
   try {
     const filePath = new URL('data/applicantData.json', import.meta.url);
     const applicants = await readFile(filePath, { encoding: 'utf8' });
@@ -39,7 +39,7 @@ app.get('/applicants/:id', async (req, res) => {
 });
 
 app.post('/applicants/:id', async (req, res) => {
-  const id = req.query.id;
+  const id = req.params;
   const { entryBooked } = req.body;
   try {
     const filePath = new URL('data/applicantData.json', import.meta.url);
