@@ -39,20 +39,20 @@ app.get('/applicants/:id', async (req, res) => {
 });
 
 app.post('/applicants/:id', async (req, res) => {
-  const id = req.params;
-  const { entryBooked } = req.body;
+  const { id } = req.params;
+
   try {
     const filePath = new URL('data/applicantData.json', import.meta.url);
     const applicants = await readFile(filePath, { encoding: 'utf8' });
-    const updatedApplicants = await JSON.parse(applicants).map((app) => {
+    const parsed = await JSON.parse(applicants);
+
+    const updatedApplicants = await parsed.map((app) => {
       if (app.id === id) {
-        let newObj = {
-          ...app,
-          entryBooked,
-        };
+        let newObj = { ...app, entryBooked: true };
         return newObj;
+      } else {
+        return app;
       }
-      return app;
     });
 
     writeFile(
