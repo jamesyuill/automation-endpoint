@@ -2,7 +2,7 @@
     {
         "id": "1",
         "name": "Simon Le Bon",
-        "entryBooked": true
+        "entryBooked": false
     },
     {
         "id": "2",
