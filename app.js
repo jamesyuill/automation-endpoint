@@ -17,7 +17,8 @@ app.get('/applicants', async (req, res) => {
   try {
     const filePath = new URL('data/applicantData.json', import.meta.url);
     const applicants = await readFile(filePath, { encoding: 'utf8' });
-    res.send(applicants);
+    const parsed = JSON.parse(applicants);
+    res.send(parsed);
   } catch (err) {
     console.error(err.message);
   }
